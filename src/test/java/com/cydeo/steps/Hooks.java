@@ -37,7 +37,8 @@ public class Hooks {
         Driver.closeDriver();
 
     }
-
+    //this is only data base relatited hooks
+    //only trigger if i put @db next to mu scenerio
     @Before("@db")
     public void setupDB(){
         System.out.println("Connecting to database...");

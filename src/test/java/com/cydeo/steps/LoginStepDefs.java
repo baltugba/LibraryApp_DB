@@ -24,23 +24,23 @@ public class LoginStepDefs {
     }
     @When("user gets username  from user fields")
     public void user_gets_username_from_user_fields() {
-        BrowserUtil.waitFor(2);
-         actualUserName = dashBoardPage.accountHolderName.getText();
+        actualUserName = dashBoardPage.accountHolderName.getText();
         System.out.println("actualUserName = " + actualUserName);
+
+
 
     }
     @Then("the username should be same with database")
     public void the_username_should_be_same_with_database() {
         //get data from database
         String query = "select full_name from users where email = '"+email+"'";
-
         DB_Util.runQuery(query);
-
         String expectedUserName = DB_Util.getFirstRowFirstColumn();
         System.out.println("expectedUserName = " + expectedUserName);
 
         //compare actual vs expected
         Assert.assertEquals(expectedUserName,actualUserName);
+
 
     }
 

@@ -23,6 +23,10 @@ public class BooksStepDefs {
     }
 
 
+
+
+
+
     @When("the user gets all book categories in webpage")
     public void the_user_gets_all_book_categories_in_webpage() {
         //potential wait here if tests fail
@@ -84,7 +88,7 @@ public class BooksStepDefs {
 
         //get same information from database
         String query = "select name,isbn,year,author,description from books\n" +
-                "where name = '"+bookName+"'";
+                "where name = '"+bookName+"'";//this line make dynamic
 
         DB_Util.runQuery(query);
         Map<String, String> bookInfo = DB_Util.getRowMap(1);

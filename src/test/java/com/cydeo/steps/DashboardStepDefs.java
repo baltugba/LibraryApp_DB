@@ -50,7 +50,7 @@ public class DashboardStepDefs
         String expectedBookNumbers = DB_Util.getFirstRowFirstColumn();
         System.out.println("expectedBookNumbers = " + expectedBookNumbers);
         //compare results with UI results(Actual results)
-        Assert.assertEquals(actualBookNumbers,expectedBookNumbers);
+        Assert.assertEquals(actualBookNumbers,expectedBookNumbers);//actual comming from UI
 
         //USERS
         DB_Util.runQuery("select count(*) from users");
@@ -58,7 +58,6 @@ public class DashboardStepDefs
         System.out.println("expectedUserNumbers = " + expectedUserNumbers);
         //compare results
         Assert.assertEquals(actualUserNumbers,expectedUserNumbers);
-
         //BORROWED BOOKS
         String query = "select count(*) from book_borrow\n" +
                 "where is_returned = 0";
